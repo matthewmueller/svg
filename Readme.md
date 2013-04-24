@@ -7,6 +7,20 @@
 
     $ component install matthewmueller/svg-element
 
+## Example
+
+```js
+var element = require('svg-element');
+var box = element('rect')
+  .size(100)
+  .attr('fill', 'black')
+  .rotate(20)
+  .move(50);
+
+var svg = document.getElementsByTagName('svg')[0];
+svg.appendChild(box.el);
+```
+
 ## API
 
 ### Element(type)

@@ -1,0 +1,13 @@
+{
+  "name": "svg-element",
+  "repo": "matthewmueller/svg-element",
+  "description": "low-level svg element helper",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}

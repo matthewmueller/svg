@@ -1,7 +1,7 @@
 
 # svg-element
 
-  nicer api for creating and manipulating svg elements
+  low-level svg element helper
 
 ## Installation
 

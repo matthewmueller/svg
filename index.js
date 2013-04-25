@@ -1,8 +1,34 @@
 /**
- * Export `Element`
+ * Module Dependencies
  */
 
-module.exports = Element;
+var domify = require('domify'),
+    html = domify(require('./template'))[0];
+
+/**
+ * Export `SVG`
+ */
+
+module.exports = SVG;
+
+/**
+ * Initialize `SVG`
+ *
+ * @param {Element} el
+ * @return {Function}
+ * @api public
+ */
+
+function SVG(el) {
+  var svg = html.cloneNode(true);
+  el.appendChild(svg);
+
+  return function(type) {
+    var element = new Element(type);
+    svg.appendChild(element.el);
+    return element;
+  }
+}
 
 /**
  * Initialize `Element`
@@ -14,6 +40,7 @@ module.exports = Element;
 
 function Element(type) {
   if (!(this instanceof Element)) return new Element(type);
+  this.type = type;
   this.el = document.createElementNS('http://www.w3.org/2000/svg', type);
   this.transforms = { x: 0, y: 0, scaleX: 1, scaleY: 1, rotation: 0, skewX: 0, skewY: 0 };
 }
@@ -38,6 +65,8 @@ Element.prototype.attr = function(key, val, el) {
 /**
  * Set the width and height
  *
+ * TODO: size for ellipsis, circle, etc.
+ *
  * @param {String} width
  * @param {String} height
  * @return {Element}
@@ -56,6 +85,8 @@ Element.prototype.size = function(width, height) {
 
 /**
  * Move
+ *
+ * TODO: move for ellipsis, circle, etc.
  *
  * @param {String} left
  * @param {String} top

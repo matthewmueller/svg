@@ -1,13 +1,16 @@
 {
-  "name": "svg-element",
-  "repo": "matthewmueller/svg-element",
+  "name": "svg",
+  "repo": "matthewmueller/svg",
   "description": "low-level svg element helper",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+    "component/domify" : "*"
+  },
   "development": {},
   "license": "MIT",
   "scripts": [
-    "index.js"
+    "index.js",
+    "template.js"
   ]
 }

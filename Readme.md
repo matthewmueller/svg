@@ -1,35 +1,35 @@
 
-# svg-element
+# svg
 
   low-level svg element helper
 
 ## Installation
 
-    $ component install matthewmueller/svg-element
+    $ component install matthewmueller/svg
 
 ## Example
 
 ```js
-var element = require('svg-element');
+var graph = document.getElementById('graph');
+var svg = require('svg');
+var element = svg(graph);
+
 var box = element('rect')
   .size(100)
   .attr('fill', 'black')
   .rotate(20)
   .move(50);
-
-var svg = document.getElementsByTagName('svg')[0];
-svg.appendChild(box.el);
 ```
 
 ## API
 
+### SVG(parent)
+
+Initialize an svg document and attach it to `parent`. Returns an `Element`.
+
 ### Element(type)
 
   Initialize `Element`.
-
-### Element.el
-
-  Access to the raw svg element.
 
 ### Element.attr(key:String|Object, val:String)
 
@@ -54,6 +54,10 @@ svg.appendChild(box.el);
 ### Element.scale(x:String, y:String)
 
   Scale the element
+
+## TODO
+
+* move(), size() should also work with circle, ellipsis, etc.
 
 ## License
 

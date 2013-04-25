@@ -1,7 +1,7 @@
 
 # svg
 
-  low-level svg element helper
+  low-level svg helper
 
 ## Installation
 

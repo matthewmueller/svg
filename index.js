@@ -2,8 +2,8 @@
  * Module Dependencies
  */
 
-var domify = require('domify'),
-    html = domify(require('./template'))[0];
+var domify = require('domify');
+var html = domify(require('./template'));
 
 /**
  * Export `SVG`

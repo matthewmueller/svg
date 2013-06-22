@@ -3,9 +3,9 @@
   "repo": "matthewmueller/svg",
   "description": "low-level svg element helper",
   "version": "0.0.1",
-  "keywords": [],
+  "keywords": ["svg"],
   "dependencies": {
-    "component/domify" : "*"
+    "component/domify" : "1.0.0"
   },
   "development": {},
   "license": "MIT",

@@ -1,0 +1,11 @@
+{
+  "name": "svg-component",
+  "version": "0.0.1",
+  "description": "low-level svg component",
+  "component": {
+    "scripts": {
+      "svg": "index.js"
+    }
+  }
+  , "main": "index"
+}

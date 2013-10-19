@@ -1,5 +1,6 @@
 
 var Element = require('./element')
+var Ellipse = require('./ellipse')
 var Circle = require('./circle')
 var Rect = require('./rect')
 var Line = require('./line')
@@ -11,7 +12,7 @@ Element.extend(Group)
 
 /**
  * manage a group
- * 
+ *
  * @param {Element} el
  * @api public
  */
@@ -29,6 +30,11 @@ Group.prototype.rect = function(width, height, x, y){
 Group.prototype.circle = function(r, x, y){
   var el = new Circle(this.add('circle'))
   if (arguments.length) el.radius(r).move(x, y)
+  return el
+}
+Group.prototype.ellipse = function(width, height, x, y){
+  var el = new Ellipse(this.add('ellipse'))
+  if (arguments.length) el.size(width, height).move(x, y)
   return el
 }
 

@@ -19,7 +19,7 @@ Circle.prototype.size = function(n){
 }
 
 Circle.prototype.move = function(x, y){
-  this.el.setAttribute('cx', x)
-  this.el.setAttribute('cy', y == null ? x : y)
+  this.el.setAttribute('cx', x || 0)
+  this.el.setAttribute('cy', y || 0)
   return this
 }

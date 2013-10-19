@@ -46,6 +46,16 @@ Initialize an svg document and attach it to `parent`. Returns a `Group`.
 
   Set the width and height
 
+### Element.transform(key:Object|String, [value]:Number)
+
+  Apply a set of transfomations to the element or get `this.transforms[key]`
+
+  ```js
+  element.transform({rotate: 20}) // set rotation
+  element.transform('rotate', 20) // set rotation
+  element.transform('rotate')     // get rotation
+  ```
+
 ### Element.move(left:String, top:String)
 
   Move

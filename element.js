@@ -8,7 +8,7 @@ module.exports = Element
  * @type {Object}
  */
 
-var transforms = { x: 0, y: 0, scaleX: 1, scaleY: 1, rotation: 0, skewX: 0, skewY: 0 }
+var transforms = { x: 0, y: 0, scaleX: 1, scaleY: 1, rotate: 0, skewX: 0, skewY: 0 }
 
 /**
  * Initialize `Element`
@@ -77,6 +77,26 @@ Element.prototype.move = function(x, y){
 }
 
 /**
+ * Apply `transforms` or get `this.transforms[key]`
+ *
+ * @param {Object|String} key
+ * @param {Number} [value]
+ * @return {this}
+ * @api public
+ */
+
+Element.prototype.transform = function(key, value){
+  if (typeof key == 'object') {
+    for (var k in key) this.transforms[k] = key[k]
+  } else if (value == null) {
+    return this.transforms[key]
+  } else {
+    this.transforms[key] = value
+  }
+  return this.setTransform()
+}
+
+/**
  * apply transforms to `this.el`
  *
  * @return {this}
@@ -87,9 +107,9 @@ Element.prototype.setTransform = function(){
   var t = this.transforms
   var str = ''
 
-  if (t.rotation) {
+  if (t.rotate) {
     var box = this.bbox()
-    str += 'rotate(' + t.rotation + ','
+    str += 'rotate(' + t.rotate + ','
       + (t.cx != null ? t.cx : box.cx)  + ','
       + (t.cy != null ? t.cy : box.cy)  + ') '
   }
@@ -132,7 +152,7 @@ Element.prototype.bbox = function(){
  */
 
 Element.prototype.rotate = function(deg){
-  this.transforms.rotation = deg || 0
+  this.transforms.rotate = deg || 0
   return this.setTransform()
 }
 

@@ -166,11 +166,6 @@ Element.prototype.crisp = function(){
   return this
 }
 
-Element.prototype.stroke = function(color){
-  this.el.setAttribute('stroke', color)
-  return this
-}
-
 Element.prototype.cap = function(type){
   this.el.setAttribute('stroke-linecap', type || 'round')
   return this

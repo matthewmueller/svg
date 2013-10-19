@@ -18,6 +18,7 @@
     "element.js",
     "group.js",
     "circle.js",
+    "ellipse.js",
     "rect.js",
     "line.js",
     "text.js",

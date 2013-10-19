@@ -20,6 +20,7 @@
     "circle.js",
     "rect.js",
     "line.js",
+    "text.js",
     "template.js"
   ],
   "license": "MIT"

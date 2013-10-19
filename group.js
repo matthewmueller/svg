@@ -2,6 +2,7 @@
 var Circle = require('./circle')
 var Rect = require('./rect')
 var Line = require('./line')
+var Text = require('./text')
 
 module.exports = Group
 
@@ -31,6 +32,12 @@ Group.prototype.circle = function(r, x, y){
 Group.prototype.line = function(x1, y1, x2, y2){
   var el = new Line(this.add('line'))
   if (arguments.length) el.from(x1, y1).to(x2, y2)
+  return el
+}
+
+Group.prototype.text = function(str){
+  var el = new Text(this.add('text'))
+  if (str) el.content(str)
   return el
 }
 

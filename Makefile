@@ -1,14 +1,15 @@
 
-build: components index.js template.js
-	@component build
+serve: node_modules
+	@node_modules/serve/bin/serve -Sloj
 
-template.js: template.html
-	@component convert $<
+node_modules: component.json package.json
+	@packin install \
+		--meta package.json,component.json,deps.json \
+		--folder node_modules \
+		--executables \
+		--no-retrace
 
-components: component.json
-	@component install --dev
+template.js: template.jade
+	@echo "module.exports = '`jade < $<`'" > $@
 
-clean:
-	rm -fr build components template.js
-
-.PHONY: clean
+.PHONY: serve

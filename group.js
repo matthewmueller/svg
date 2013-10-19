@@ -1,10 +1,13 @@
 
+var Element = require('./element')
 var Circle = require('./circle')
 var Rect = require('./rect')
 var Line = require('./line')
 var Text = require('./text')
 
 module.exports = Group
+
+Element.extend(Group)
 
 /**
  * manage a group
@@ -14,7 +17,7 @@ module.exports = Group
  */
 
 function Group(el){
-  this.el = el
+  Element.call(this, el)
 }
 
 Group.prototype.rect = function(width, height, x, y){
@@ -39,6 +42,16 @@ Group.prototype.text = function(str){
   var el = new Text(this.add('text'))
   if (str) el.content(str)
   return el
+}
+
+Group.prototype.group = function(){
+  return new Group(this.add('g'))
+}
+
+Group.prototype.move = function(x, y){
+  this.transforms.x = x
+  this.transforms.y = y
+  return this.setTransform()
 }
 
 Group.prototype.add = function(type){

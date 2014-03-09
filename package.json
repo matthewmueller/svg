@@ -6,6 +6,13 @@
     "scripts": {
       "svg": "index.js"
     }
+  },
+  "dependencies": {
+    "extensible": "yields/extensible",
+    "domify": "component/domify",
+    "alias-property": "0.1.0"
+  },
+  "devDependencies": {
+    "packin": "*"
   }
-  , "main": "index"
 }

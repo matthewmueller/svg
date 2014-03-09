@@ -2,15 +2,27 @@
   "name": "svg",
   "repo": "matthewmueller/svg",
   "description": "low-level svg element helper",
-  "version": "0.0.2",
-  "keywords": ["svg"],
+  "keywords": [
+    "svg"
+  ],
   "dependencies": {
-    "component/domify" : "1.0.0"
+    "jkroso/alias-property": "0.1.0",
+    "yields/extensible": "0.1.0",
+    "component/domify": "1.0.1"
   },
-  "development": {},
-  "license": "MIT",
+  "development": {
+    "jkroso/serve": "1.5.1"
+  },
   "scripts": [
     "index.js",
+    "element.js",
+    "group.js",
+    "circle.js",
+    "ellipse.js",
+    "rect.js",
+    "line.js",
+    "text.js",
     "template.js"
-  ]
+  ],
+  "license": "MIT"
 }

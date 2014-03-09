@@ -12,12 +12,12 @@
 ```js
 var graph = document.getElementById('graph');
 var svg = require('svg');
-var element = svg(graph);
+var draw = svg(graph);
 
-var box = element('rect')
-  .size(100)
-  .attr('fill', 'black')
+var box = draw.rect()
+  .fill('black')
   .rotate(20)
+  .size(100)
   .move(50);
 ```
 
@@ -25,11 +25,18 @@ var box = element('rect')
 
 ### SVG(parent)
 
-Initialize an svg document and attach it to `parent`. Returns an `Element`.
+Initialize an svg document and attach it to `parent`. Returns a `Group`.
 
-### Element(type)
+### Group\[element\]()
 
-  Initialize `Element`.
+  All native SVG element types have a corresponding method to create them. They will automatically be added to the current group. The supported element types are listed below with there argument lists. These arguments are optional though and only there to help keep large documents concise. Each method returns an Element.
+
+  - __ellipse(width, height, x, y)__
+  - __rect(width, height, x, y)__
+  - __line(x1, y1, x2, y2)__
+  - __circle(size, x, y)__
+  - __text(content)__
+  - __group()__
 
 ### Element.attr(key:String|Object, val:String)
 
@@ -39,9 +46,15 @@ Initialize an svg document and attach it to `parent`. Returns an `Element`.
 
   Set the width and height
 
-### Element.transform(obj:Object)
+### Element.transform(key:Object|String, [value]:Number)
 
-  Perform a transform on the element. Options include: `rotate`, `scale`, `skewX`, `skewY`, `translate`, `transform`.
+  Apply a set of transfomations to the element or get `this.transforms[key]`
+
+  ```js
+  element.transform({rotate: 20}) // set rotation
+  element.transform('rotate', 20) // set rotation
+  element.transform('rotate')     // get rotation
+  ```
 
 ### Element.move(left:String, top:String)
 
@@ -51,13 +64,33 @@ Initialize an svg document and attach it to `parent`. Returns an `Element`.
 
   Rotate the element
 
+### Element.radius(n:Number)
+
+  Set the elements radius. For rect's it will set the border-radius
+
 ### Element.scale(x:String, y:String)
 
   Scale the element
 
-## TODO
+### Element.fill(color)
 
-* move(), size() should also work with circle, ellipsis, etc.
+  Set the fill color. `color` can be any valid CSS color string
+
+### Element.stroke(color)
+
+  Set the stroke color
+
+### Element.cap(type)
+
+  Set the stroke linecap type to one of:
+
+  - butt
+  - round
+  - square
+
+### Element.dash(on, off)
+
+  Set the dash length
 
 ## License
 

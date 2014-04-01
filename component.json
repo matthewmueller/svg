@@ -1,7 +1,7 @@
 {
   "name": "svg",
   "repo": "matthewmueller/svg",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "low-level svg element helper",
   "keywords": [
     "svg"

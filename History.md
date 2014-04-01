@@ -1,4 +1,10 @@
 
+0.1.1 / 2014-04-01
+==================
+
+ * fix path and polyline. (@jkroso)
+ * add Element#style(). (@jkroso)
+
 0.1.0 / 2014-04-01
 ==================
 

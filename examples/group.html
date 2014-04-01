@@ -1,30 +1,38 @@
+<html>
+<head>
+  <title>svg component</title>
+</head>
+<body>
+  <h1>svg component</h1>
+  <div id="box"></div>
 
-<title>svg - group example</title>
+  <script src="../build/build.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var svg = require('svg')
+    var draw = svg(box).group()
 
-<div id="box"></div>
+    draw.rect(100, 100, 50, 50)
+      .fill('orange')
+      .stroke('red')
+      .radius(6)
 
-<script>
-  var svg = require('..')
-  var draw = svg(box).group()
+    draw.circle(20, 100, 100).fill('red')
 
-  draw.rect(100, 100, 50, 50)
-    .fill('orange')
-    .stroke('red')
-    .radius(6)
+    draw.line()
+      .from(100, 50)
+      .to(100, 150)
+      .fill('aliceblue')
+      .width(2)
 
-  draw.circle(20, 100, 100).fill('red')
+    draw.text('hello world')
+      .move(58, 105)
+      .fill('aliceblue')
+      .family('verdana')
+      .size(16)
 
-  draw.line()
-    .from(100, 50)
-    .to(100, 150)
-    .fill('aliceblue')
-    .width(2)
+    draw.move(20, 30)
+      .rotate(20)
 
-  draw.text('hello world')
-    .move(58, 105)
-    .fill('aliceblue')
-    .family('verdana')
-    .size(16)
-
-  draw.rotate(20)
-</script>
+  </script>
+</body>
+</html>

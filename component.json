@@ -7,22 +7,20 @@
   ],
   "dependencies": {
     "jkroso/alias-property": "0.1.0",
-    "yields/extensible": "0.1.0",
-    "component/domify": "1.0.1"
-  },
-  "development": {
-    "jkroso/serve": "1.5.1"
+    "component/inherit": "0.0.3",
+    "component/domify": "1.2.2"
   },
   "scripts": [
     "index.js",
-    "element.js",
-    "group.js",
-    "circle.js",
-    "ellipse.js",
-    "rect.js",
-    "line.js",
-    "text.js",
-    "template.js"
+    "template.js",
+    "lib/element.js",
+    "lib/group.js",
+    "lib/circle.js",
+    "lib/ellipse.js",
+    "lib/rect.js",
+    "lib/line.js",
+    "lib/text.js",
+    "lib/polyline.js"
   ],
   "license": "MIT"
 }

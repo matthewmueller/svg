@@ -88,7 +88,7 @@ Initialize an svg document and attach it to `parent`. Returns a `Group`.
   - round
   - square
 
-### Element.dash(on, off)
+### Element.dash(gap, dash)
 
   Set the dash length
 

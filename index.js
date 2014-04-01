@@ -1,7 +1,10 @@
+/**
+ * Module Dependencies
+ */
 
-var html = require('./template')
-var domify = require('domify')
-var Group = require('./group')
+var html = require('./template');
+var domify = require('domify');
+var Group = require('./lib/group');
 
 /**
  * create a new drawing context
@@ -11,7 +14,7 @@ var Group = require('./group')
  */
 
 module.exports = function(el){
-  var svg = domify(html)
-  el.appendChild(svg)
-  return new Group(svg)
+  var svg = domify(html);
+  el.appendChild(svg);
+  return new Group(svg);
 }

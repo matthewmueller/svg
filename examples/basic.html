@@ -11,6 +11,7 @@
     var svg = require('svg');
     var draw = svg(box)
 
+    // box
     draw.rect(100, 100, 50, 50)
       .fill('orange')
       .stroke('red')
@@ -33,9 +34,29 @@
       .transform('rotate', 20)
       .size(16)
 
+    // angle braces
+    draw.group().move(90, 250)
+      .polyline()
+        .stroke('black')
+        .point(15, 0)
+        .point(25, 10)
+        .point(15, 20)
+        .width(2)
+        // .copy()
+        //   .rotate(180)
+        //   .move(15, 0)
+
+    // eye
     draw.ellipse(100, 50, 100, 200).fill('aliceblue')
     draw.circle(15, 100, 200).fill('#9deb9e')
     draw.circle(8, 100, 200)
+    draw.path(33,186)
+      .curve(86, -37, 122, -5)
+      .curve(8, 13, -5, 8)
+      .curve(-26, -35, -111, -3)
+      .curve(-6, 3, -6, 0)
+      .stroke('#ccc')
+      .fill('#eee')
 
   </script>
 </body>

@@ -9,7 +9,8 @@
   "dependencies": {
     "jkroso/alias-property": "0.1.0",
     "component/inherit": "0.0.3",
-    "component/domify": "1.2.2"
+    "component/domify": "1.2.2",
+    "ianstormtaylor/css": "0.3.0"
   },
   "scripts": [
     "index.js",
@@ -21,6 +22,7 @@
     "lib/rect.js",
     "lib/line.js",
     "lib/text.js",
+    "lib/path.js",
     "lib/polyline.js"
   ],
   "license": "MIT"

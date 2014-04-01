@@ -1,4 +1,17 @@
 
+0.1.0 / 2014-04-01
+==================
+
+ * cleanup
+ * support: line (@jkroso)
+ * support: path (@jkroso)
+ * support: polyline (@jkroso)
+ * support: rect (@jkroso)
+ * support: ellipse (@jkroso)
+ * support: groups (@jkroso)
+ * support: text (@jkroso)
+ * refactor
+
 0.0.2 / 2013-06-21
 ==================
 
